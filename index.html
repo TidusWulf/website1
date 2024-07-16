@@ -1,11 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Title of the document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open Front Camera</title>
 </head>
-
 <body>
-The content of the document.
-</body>
+    <h1>Front Camera Access</h1>
+    <video id="video" width="640" height="480" autoplay></video>
+    <script>
+        async function openFrontCamera() {
+            try {
+                const stream = await navigator.mediaDevices.getUserMedia({
+                    video: { facingMode: 'user' }
+                });
+                const videoElement = document.getElementById('video');
+                videoElement.srcObject = stream;
+            } catch (error) {
+                console.error('Error accessing the camera: ', error);
+            }
+        }
 
-</html> 
+        openFrontCamera();
+    </script>
+</body>
+</html>
