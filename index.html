@@ -4,9 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Open Front Camera</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        #video {
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
 </head>
 <body>
-    <h1>Stud Found! Good work.</h1>
+    <h1 style="text-align: center;">Stud found. Good work!</h1>
     <video id="video" width="640" height="480" autoplay></video>
     <script>
         async function openFrontCamera() {
